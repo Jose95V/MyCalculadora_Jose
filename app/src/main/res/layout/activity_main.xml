@@ -23,7 +23,7 @@
             android:gravity="right"
             android:singleLine="true"
             android:textSize="28dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#000000"/>
 
     <!--</LinearLayout>-->
 

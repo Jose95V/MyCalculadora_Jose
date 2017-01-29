@@ -7,72 +7,207 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity  {
 
-    EditText num1, num2;
-    Button sumar, restar, dividir, multiplicar;
-    TextView resultado;
+    Button btnCero, btnUno, btnDos, btnTres, btnCuatro, btnCinco, btnSeis, btnSiete, btnOcho,
+            btnNueve, btnPunto, btnIgual, btnSuma, btnResta, btnMulti, btnDiv, btnLimpiar;
 
+    EditText etProceso, etconcatenar;
+
+    double numero1, numero2, resultado;
+
+    String operador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        num1 = (EditText)  findViewById(R.id.num1);
-        num2 = (EditText) findViewById(R.id.num2);
+        btnLimpiar = (Button)findViewById(R.id.btnLimpiar);
+        btnCero = (Button)findViewById(R.id.btnCero);
+        btnUno = (Button)findViewById(R.id.btnUno);
+        btnDos = (Button)findViewById(R.id.btnDos);
+        btnTres = (Button)findViewById(R.id.btnTres);
+        btnCuatro = (Button)findViewById(R.id.btnCuatro);
+        btnCinco = (Button)findViewById(R.id.btnCinco);
+        btnSeis = (Button)findViewById(R.id.btnSeis);
+        btnSiete = (Button)findViewById(R.id.btnSiete);
+        btnOcho = (Button)findViewById(R.id.btnOcho);
+        btnNueve = (Button)findViewById(R.id.btnNueve);
+        btnPunto = (Button)findViewById(R.id.btnPunto);
+        btnIgual = (Button)findViewById(R.id.btnIgual);
+        btnSuma = (Button)findViewById(R.id.btnSuma);
+        btnResta = (Button)findViewById(R.id.btnResta);
+        btnMulti = (Button)findViewById(R.id.btnMulti);
+        btnDiv = (Button)findViewById(R.id.btnDiv);
+        etProceso = (EditText)findViewById(R.id.etProceso);
 
-        sumar = (Button) findViewById(R.id.sumar);
-        restar = (Button) findViewById(R.id.restar);
-        dividir = (Button) findViewById(R.id.dividir);
-        multiplicar = (Button) findViewById(R.id.multiplicar);
+        btnCero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "0");
+            }
+        });
 
-        resultado = (TextView) findViewById(R.id.resultado);
+        btnUno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "1");
+
+            }
+        });
+
+        btnDos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "2");
+            }
+        });
+
+        btnTres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "3");
+            }
+        });
+
+        btnCuatro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "4");
+            }
+        });
+
+        btnCinco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "5");
+            }
+        });
+
+        btnSeis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "6");
+            }
+        });
+
+        btnSiete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "7");
+            }
+        });
+
+        btnOcho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "8");
+            }
+        });
+
+        btnNueve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + "9");
+            }
+        });
+
+        btnPunto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                etProceso.setText(etconcatenar.getText().toString() + ".");
+            }
+        });
 
 
-        sumar.setOnClickListener(this);
-        restar.setOnClickListener(this);
-        dividir.setOnClickListener(this);
-        multiplicar.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        String n1 = num1.getText().toString();
-        String n2 = num2.getText().toString();
-
-        int ent1 = Integer.parseInt(n1);
-        int ent2 = Integer.parseInt(n2);
-
-        int resp = 0;
-
-
-        switch (view.getId()){
-
-            case R.id.sumar:
-                resp = ent1+ent2;
-                break;
-
-            case R.id.restar:
-                resp = ent1-ent2;
-                break;
-
-            case R.id.dividir:
-                resp = ent1/ent2;
-                if(ent2 != 0){
-                    resp = ent1 / ent2;
-                }else {
-                    resultado.setText("Infinito");
+        btnIgual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                numero2 = Double.parseDouble(etconcatenar.getText().toString());
+                if(operador.equals("+")){
+                    etProceso.setText("");
+                    resultado = numero1 + numero2;
                 }
-                break;
+                if(operador.equals("-")){
+                    etProceso.setText("");
+                    resultado = numero1 - numero2;
+                }
+                if(operador.equals("*")){
+                    etProceso.setText("");
+                    resultado = numero1 * numero2;
+                }
+                if(operador.equals("/")){
+                    etProceso.setText("");
+                    resultado = numero1 / numero2;
 
-            case R.id.multiplicar:
-                resp = ent1*ent2;
-                break;
-        }
+                    if(numero2 == 0){
+                        etProceso.setText("Infinito");
+                    }else {
+                        etProceso.setText("Infinito");
 
-        resultado.setText(""+resp);
+                    }
+                }
+                etProceso.setText(String.valueOf(resultado));
+            }
+        });
+        btnSuma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operador = "+";
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                numero1 = Double.parseDouble(etconcatenar.getText().toString());
+                etProceso.setText("");
+            }
+        });
+        btnResta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operador = "-";
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                numero1 = Double.parseDouble(etconcatenar.getText().toString());
+                etProceso.setText("");
+            }
+        });
+        btnMulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operador = "*";
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                numero1 = Double.parseDouble(etconcatenar.getText().toString());
+                etProceso.setText("");
+            }
+        });
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operador = "/";
+                etconcatenar = (EditText)findViewById(R.id.etProceso);
+                numero1 = Double.parseDouble(etconcatenar.getText().toString());
+                etProceso.setText("");
+            }
+        });
+        btnLimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numero1 = 0;
+                numero2 = 0;
+                etProceso.setText("");
+            }
+        });
     }
 }
+
+
