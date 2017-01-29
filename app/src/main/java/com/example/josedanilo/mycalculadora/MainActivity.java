@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.dividir:
                 resp = ent1/ent2;
+                if(ent2 != 0){
+                    resp = ent1 / ent2;
+                }else {
+                    resultado.setText("Infinito");
+                }
                 break;
 
             case R.id.multiplicar:
